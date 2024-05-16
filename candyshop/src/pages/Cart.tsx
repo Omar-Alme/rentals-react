@@ -13,7 +13,6 @@ function Cart() {
       <Button asChild size='lg'>
         <Link to='/'>Home button</Link>
       </Button>
-
       </div>
   
     </div>
