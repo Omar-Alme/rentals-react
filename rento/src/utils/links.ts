@@ -11,5 +11,4 @@ export const links: Link[] = [
     { href: 'checkout', label: 'checkout' },
     { href: 'orders', label: 'orders' },
 
-
-]
+];
