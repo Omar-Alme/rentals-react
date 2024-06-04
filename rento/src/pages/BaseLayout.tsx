@@ -1,19 +1,21 @@
-import { Header, Navbar } from "@/components";
-import { Outlet } from "react-router-dom";
+import { Header, Navbar, Loading } from "@/components";
+import { Outlet, useNavigation } from "react-router-dom";
 
-function BaseLayout() {
-    return <>
-    
-    <Header/>
-    <Navbar/> 
+const BaseLayout = () => {
+    const navigation = useNavigation();
+    const isPageLoading = navigation.state === 'loading';
 
+    return (
+    <>
+    
+        <Header/>
+        <Navbar/> 
 
-    <div className="align-element py-20">
-        <Outlet/>
-    </div>
-    
-    
-    
-    </>;
-  }
-  export default BaseLayout;
+        <div className="align-element py-20">
+            {isPageLoading ? <Loading/> : <Outlet/>}
+        </div>
+        
+    </>
+    );
+};
+export default BaseLayout;
