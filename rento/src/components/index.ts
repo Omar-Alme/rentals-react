@@ -21,3 +21,4 @@ export {default as ProductsContainer} from './ProductsContainer';
 export {default as ProductsList} from './ProductsList';
 
 export {default as Loading} from './Loading';
+export {default as FormInput} from './FormInput'

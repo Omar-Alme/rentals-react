@@ -3,17 +3,51 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from './ui/button';
 import { ProductsResponseWithParams } from '@/utils';
+import FormInput from './FormInput';
+import  FormSelect from './FormSelect';
 
 
 function Filters() {
     const {meta, params} = useLoaderData() as ProductsResponseWithParams;
-    const {search} = params;
+    const {search, company, category, shipping, order, price} = params;
     return (
         <Form className='border rounded-md px-8 py-4 grid gap-x-4 gap-y-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center'>
-            <div className='mb-2'>
-                <Label htmlFor='search'>Search Product</Label>
-                <Input type='text' id='search' name='search' defaultValue={search} />
-            </div>
+            
+            {/* Search Input */}
+            <FormInput
+                type='search'
+                name='search'
+                label='search products'
+                defaultValue={search}
+            />
+
+            {/* CATEGORIES  */}
+            <FormSelect
+                name='category'
+                label='select category'
+                defaultValue={category}
+                options={meta.categories}
+            />
+
+            {/* COMPANY */}
+            <FormSelect
+                name='company'
+                label='select company'
+                defaultValue={company}
+                options={meta.companies}
+            />
+
+            {/* ORDER */}
+            <FormSelect
+                name='order'
+                label='order by'
+                defaultValue={order}
+                options={['a-z', 'z-a', 'price-lowest', 'price-highest']}
+            />
+
+
+
+
             <Button type='submit' size='sm' className='self-end mb-2'>
                 Search
             </Button>
