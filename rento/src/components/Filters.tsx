@@ -5,6 +5,8 @@ import { Button } from './ui/button';
 import { ProductsResponseWithParams } from '@/utils';
 import FormInput from './FormInput';
 import  FormSelect from './FormSelect';
+import FormRange from './FormRange';
+import FormCheckbox from './FormCheckbox';
 
 
 function Filters() {
@@ -43,6 +45,20 @@ function Filters() {
                 label='order by'
                 defaultValue={order}
                 options={['a-z', 'z-a', 'price-lowest', 'price-highest']}
+            />
+
+            {/* PRICE */}
+            <FormRange 
+                label='price' 
+                name='price' 
+                defaultValue={price} 
+            />
+
+            {/* SHIPPING */}
+            <FormCheckbox 
+                label='free shipping' 
+                name='shipping' 
+                defaultValue={shipping} 
             />
 
 
