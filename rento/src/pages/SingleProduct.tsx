@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { SelectProductColor, SelectProductAmount } from '@/components';
+import { Mode } from '@/components/SelectProductAmount';
 
 
 export const loader: LoaderFunction = async ({params}) => {
@@ -63,7 +64,11 @@ function SingleProuct() {
             setProductColor={setProductColor} 
           />
           {/* AMOUNT */}
-          <SelectProductAmount />
+          <SelectProductAmount
+            mode={Mode.SingleProduct}
+            amount={amount}
+            setAmount={setAmount}
+          />
           {/* CART BUTTON */}
           <Button onClick={addToCart} className='mt-10' size='lg'>
             Add to Cart
