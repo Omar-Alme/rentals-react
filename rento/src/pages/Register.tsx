@@ -13,6 +13,7 @@ export const action: ActionFunction = async ({
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     await customFetch.post('/auth/local/register', data);
     toast({ description: 'Registered' });
     return redirect('/login')
@@ -37,16 +38,13 @@ function Register() {
               <FormInput type='text' name='username' />
               <FormInput type='email' name='email'  />
               <FormInput type='password' name='password' />
-              <Button type='submit' className='w-full mt-4'>
-                Submit
-              </Button>
+              <SubmitBtn text='Register' className='w-full mt-4' />
               <p className='text-center mt-4'>
                 Already a member?{' '} 
                 <Button type='button' asChild variant='link'>
                   <Link to='/login'>Login</Link>
                 </Button>
               </p>
-
             </Form>
           </CardContent>
         </Card>
