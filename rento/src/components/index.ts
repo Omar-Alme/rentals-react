@@ -31,4 +31,9 @@ export {default as SelectProductColor} from './SelectProductColor';
 export {default as SelectProductAmount} from './SelectProductAmount';
 
 
+export {default as CartTotals} from './CartTotals';
+export {default as CartItemsList} from './CartItemsList';
+
+
+
 
