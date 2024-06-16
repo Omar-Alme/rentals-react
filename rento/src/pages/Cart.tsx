@@ -3,15 +3,15 @@ import { Button } from '@/components/ui/button';
 import { SectionTitle, CartItemsList, CartTotals } from '@/components';
 import { useAppSelector } from '@/hooks';
 
-const Cart = () => {
-  const user = null;
+function Cart() {
+  const user = useAppSelector((state) => state.userState.user);
 
   const numItemsInCart = useAppSelector(
     (state) => state.cartState.numItemsInCart
   );
 
   if (numItemsInCart === 0) {
-    return <SectionTitle text='Empty cart ☹️' />;
+    return <SectionTitle text='Empty cart' />;
   }
   
   
