@@ -25,21 +25,6 @@ function ComplexPaginationContainer() {
 
   if(pageCount < 2) return null;
 
-  // const renderPagination = pages.map((pageNumber) => {
-  //     const isActive = pageNumber === page;
-  //     const url = constructUrl({pageNumber, search, pathname});
-  //     return (
-  //         <PaginationItem key={pageNumber}>
-  //             <PaginationLink
-  //                 to={url}
-  //                 isActive={isActive}
-  //             >
-  //                 {pageNumber}
-  //             </PaginationLink>
-  //         </PaginationItem>
-  //     );
-  // });
-
   const constructButton = ({
     pageNumber, 
     isActive
