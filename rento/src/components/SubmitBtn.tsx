@@ -23,7 +23,7 @@ return (
         text
         )}
     </Button>
-  )
+    )
 }
 
 export default SubmitBtn
