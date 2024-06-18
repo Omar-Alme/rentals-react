@@ -5,11 +5,15 @@ import ErrorElement from './components/ErrorElement';
 import { loader as landingLoader } from './pages/Landing';
 import { loader as productsLoader } from './pages/Products';
 import { loader as singleProductLoader } from './pages/SingleProduct';
+import { loader as checkoutLoader } from './pages/Checkout';
 import { store } from './store';
-import { action as loginAction } from './pages/Login';
 
-// pages
-import { action as registerAction } from './pages/Register';
+// actions
+import { action as regiserUser } from './pages/Register';
+import { action as loginUser } from './pages/Login';
+import { action as checkoutAction } from './components/CheckoutForm'
+
+
 
 
 
@@ -50,7 +54,9 @@ const router = createBrowserRouter([
       {
         path: 'checkout', 
         element: <Checkout />,
-        errorElement: <ErrorElement />
+        errorElement: <ErrorElement />,
+        loader: checkoutLoader(store),
+        action: checkoutAction(store),
       },
       {
         path: 'orders', 
@@ -63,13 +69,13 @@ const router = createBrowserRouter([
     path: '/login', 
     element: <Login />, 
     errorElement: <Error />,
-    action: loginAction(store),
+    action: loginUser(store),
   },
   {
     path: '/Register', 
     element: <Register />, 
     errorElement: <Error />,
-    action: registerAction,
+    action: regiserUser,
   },
   
 ]);
