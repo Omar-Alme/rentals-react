@@ -12,10 +12,7 @@ const Hero = () => {
         </h1>
 
         <p className='mt-8 max-w-xl text-lg leading-8'>
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-          qui lorem cupidatat commodo.
+        Discover the epitome of elegance and sophistication with our curated collection of luxury furniture. Each piece is meticulously crafted to transform your living spaces into a sanctuary of style and comfort. Elevate your home with timeless designs, exquisite materials, and unparalleled craftsmanship that define true luxury. Experience the art of fine living with us today.
         </p>
 
         <Button asChild size='lg' className='mt-10'>
